@@ -24,7 +24,7 @@
     "tests",
     "demo"
   ],
-  "devDependencies": {
+  "dependencies": {
     "jquery-ui": "^1.11.4"
   }
 }
