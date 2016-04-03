@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="../src/ui.terminal.css"/>
+    <script src="../src/ui.terminal.js"></script>
+</head>
+<body>
+    <div id="test-container">
+
+    </div>
+<script>
+    $(document).ready(function() {
+        $("#test-container").terminal({inputBasePath: "test_test"});
+    });
+</script>
+</body>
+</html>

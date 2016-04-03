@@ -1,0 +1,28 @@
+{
+  "name": "ui.terminal",
+  "description": "jquery ui terminal widget",
+  "main": "./src/ui.terminal",
+  "authors": [
+    "Andrey Bobrov"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "terminal",
+    "widget",
+    "console-style",
+    "terminal-style",
+    "console"
+  ],
+  "homepage": "https://github.com/broAir/ui.terminal",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery-ui": "^1.11.4"
+  }
+}
