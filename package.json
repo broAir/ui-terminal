@@ -1,14 +1,14 @@
 {
-  "name": "ui.terminal",
+  "name": "ui-terminal",
   "version": "1.0.0",
   "description": "jquery ui terminal widget",
-  "main": "./src/ui.terminal",
+  "main": "./src/ui.terminal.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/broAir/ui.terminal.git"
+    "url": "git+https://github.com/broAir/ui-terminal.git"
   },
   "keywords": [
     "terminal",
@@ -20,10 +20,10 @@
   "author": "Andrey Bobrov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/broAir/ui.terminal/issues"
+    "url": "https://github.com/broAir/ui-terminal/issues"
   },
-  "homepage": "https://github.com/broAir/ui.terminal#readme",
-  "devDependencies": {
+  "homepage": "https://github.com/broAir/ui-terminal#readme",
+  "dependencies": {
     "jquery": "^2.2.2",
     "jquery-ui": "^1.10.5"
   }
