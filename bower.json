@@ -1,7 +1,7 @@
 {
   "name": "ui.terminal",
   "description": "jquery ui terminal widget",
-  "main": "./src/ui.terminal",
+  "main": "./src/ui.terminal.js",
   "authors": [
     "Andrey Bobrov"
   ],
