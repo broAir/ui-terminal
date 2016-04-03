@@ -13,9 +13,11 @@
     "terminal-style",
     "console"
   ],
-  "homepage": "https://github.com/broAir/ui.terminal",
+  "homepage": "https://github.com/broAir/ui-terminal",
   "moduleType": [],
   "ignore": [
+    "README.md",
+    "**/.*",
     "node_modules",
     "bower_components",
     "test",
