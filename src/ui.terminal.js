@@ -12,87 +12,6 @@
 
         _selectors: {},
 
-        _types: {
-            // @name: command name
-            // @desc: command help text
-            // @trigger: function to be executed when command triggers
-            // @props: additional properties that are to be added to the command object
-            Command: function (name, trigger, desc, props) {
-                this.name = name;
-                this.info = desc;
-                this.trigger = trigger;
-                this.properties = props;
-            }
-        },
-
-
-        _inputHtml: function () {
-            return '<div class="terminal-input-wrap">\
-                            <span id="input-text">' + this.options.inputBasePath + ' $</span>\
-                            <span class="terminal-input"></span>\
-                        </div>'
-        },
-        _terminalHtml: function () {
-            return '<div class="terminal-container transparent">\
-                                <div class="terminal-header"></div>\
-                                <div class="terminal terminal-scrollable sharp-top-border">\
-                                    <div class="terminal-output"></div>\
-                                    <div class="terminal-helper" contenteditable="true"></div>\
-                                </div>\
-                            </div>'
-        },
-
-        _putCaretToTheEnd: function (el) {
-            el.focus();
-            var textNode = el.firstChild;
-
-            if (textNode == null || textNode.data == null)
-                return;
-
-            var caret = textNode.data.length || 0;
-            var range = document.createRange();
-
-            range.setStart(textNode, caret);
-            range.setEnd(textNode, caret);
-
-            var sel = window.getSelection();
-            sel.removeAllRanges();
-            sel.addRange(range);
-        },
-
-        _terminalScrollBottom: function () {
-            var $terminal = this._selectors.$terminal;
-            $terminal.scrollTop($terminal[0].scrollHeight);
-        },
-
-        // Input is re-created each time we submit the data.
-        _createNewInput: function () {
-            //    $inputDisplayText.removeClass("terminal-input terminal-input-typing");
-            //    $inputLine.removeClass("terminal-input-wrap");
-            //    addToOutput(inputHtml);
-            //    // fix the reference
-            //    $inputDisplayText = $output.find(".terminal-input");
-            //    $inputLine = $output.find(".terminal-input-wrap")
-            var $output = this._selectors.$output;
-            this._selectors.$inputDisplayText.removeClass("terminal-input terminal-input-typing");
-            this._selectors.$inputLine.removeClass("terminal-input-wrap");
-
-            this._addToOutput(this._inputHtml());
-
-            // preserve the reference
-            this._selectors.$inputLine = $output.find(".terminal-input-wrap");
-            this._selectors.$inputDisplayText = $output.find(".terminal-input");
-        },
-
-        // Function that we use to output data.
-        _addToOutput: function (data) {
-            this._selectors.$output.append(data);
-
-            // Scroll down after we are done
-            this._terminalScrollBottom();
-        },
-
-
         _commands: [],
 
         _commandStack: {
@@ -137,6 +56,87 @@
                 this._pointer = this._arr.length;
             }
         },
+
+        _types: {
+            // @name: command name
+            // @desc: command help text
+            // @trigger: function to be executed when command triggers
+            // @props: additional properties that are to be added to the command object
+            Command: function (name, trigger, desc, props) {
+                this.name = name;
+                this.info = desc;
+                this.trigger = trigger;
+                this.properties = props;
+            }
+        },
+
+        // HTMLS
+        _inputHtml: function () {
+            return '<div class="terminal-input-wrap">\
+                            <span id="input-text">' + this.options.inputBasePath + ' $</span>\
+                            <span class="terminal-input"></span>\
+                        </div>'
+        },
+
+        _terminalHtml: function () {
+            return '<div class="terminal-container transparent">' +
+            this.options.draggable ? '<div class="terminal-header"></div>' : '' +
+            '<div class="terminal terminal-scrollable sharp-top-border">\
+                <div class="terminal-output"></div>\
+                <div class="terminal-helper" contenteditable="true"></div>\
+            </div>\
+        </div>'
+        },
+        // ./HTMLS
+
+        // HELPERS
+        _putCaretToTheEnd: function (el) {
+            el.focus();
+            var textNode = el.firstChild;
+
+            if (textNode == null || textNode.data == null)
+                return;
+
+            var caret = textNode.data.length || 0;
+            var range = document.createRange();
+
+            range.setStart(textNode, caret);
+            range.setEnd(textNode, caret);
+
+            var sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(range);
+        },
+
+        _terminalScrollBottom: function () {
+            var $terminal = this._selectors.$terminal;
+            $terminal.scrollTop($terminal[0].scrollHeight);
+        },
+
+        // Input is re-created each time we submit the data.
+        _createNewInput: function () {
+            var $output = this._selectors.$output;
+
+            this._selectors.$inputDisplayText.removeClass("terminal-input terminal-input-typing");
+            this._selectors.$inputLine.removeClass("terminal-input-wrap");
+
+            this._addToOutput(this._inputHtml());
+
+            // preserve the reference
+            this._selectors.$inputLine = $output.find(".terminal-input-wrap");
+            this._selectors.$inputDisplayText = $output.find(".terminal-input");
+        },
+
+        // Function that we use to output data.
+        _addToOutput: function (data) {
+            this._selectors.$output.append(data);
+
+            // Scroll down after we are done
+            this._terminalScrollBottom();
+        },
+
+        // ./HELPERS
+
 
         _create: function () {
             var options = this.options;
