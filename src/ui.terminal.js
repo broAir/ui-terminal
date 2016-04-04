@@ -7,6 +7,7 @@
         options: {
             inputBasePath: "root@anykeydev:~/projects",
             draggable: false,
+            draggableContainer:"",
             commands: []
         },
 
@@ -210,6 +211,12 @@
             // the whole input line
             selectors.$inputLine = $terminalHtml.find(".terminal-input-wrap");
 
+            if (this.options.draggable) {
+                $(".terminal-container").draggable({
+                    handle: ".terminal-header",
+                    containment: this.options.draggableContainer
+                });
+            }
 
             el.html($terminalHtml);
         },

@@ -4,7 +4,7 @@
     background: radial-gradient(circle, #ffffff 0%, #aaaaaa 100%) no-repeat;
 
     height: 500px;
-    width: 800px;
+    width: 100%;
     padding: 7.5px;
 
     border-radius: 5px;
@@ -16,11 +16,18 @@
     font-size: 1.2em;
 }
 
+.terminal-container{
+    width:100%;
+}
+
 .terminal-header {
     position: relative;
 
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    
+    padding-left:7.5px;
+    padding-right:7.5px;
 
     width: 100%;
     height: 20px;
@@ -39,7 +46,7 @@
 }
 
 span.terminal-input {
-    width: 900px;
+    width: 100%;
 }
 
 span.terminal-input-typing:after {
