@@ -2,7 +2,7 @@
 
 ## Description
 Jquery UI Terminal Widget
-Allows you to add custom commands on top of standard *help* and *clear* commands.
+Allows you to add custom commands on top of predefined `help` and `clear` commands.
 
 Can be draggable as well.
 
