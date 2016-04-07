@@ -74,7 +74,7 @@
         // HTMLS
         _inputHtml: function () {
             return '<div class="terminal-input-wrap">\
-                            <span id="input-text">' + this.options.inputBasePath + ' $</span>\
+                            <span id="input-text">' + this.options.inputBasePath + ': $</span>\
                             <span class="terminal-input"></span>\
                         </div>'
         },
