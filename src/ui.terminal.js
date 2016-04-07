@@ -364,7 +364,7 @@
         // @args.name: command name
         // @args.desc: command help text
         // @args.trigger: function to be executed when command triggers
-        // @args.props: additional properties that are to be added to the command object
+        // @args.properties: additional properties that are to be added to the command object
         addCommand: function (args) {
             var name = args.name;
             if (!name) {
@@ -378,7 +378,7 @@
             }
 
             var desc = args.desc || "";
-            var opts = args.props || "";
+            var opts = args.properties || "";
 
             var command = new this._types.Command(name, trigger, desc, opts);
         }
