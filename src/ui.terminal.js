@@ -82,7 +82,7 @@
         },
 
         _terminalHtml: function () {
-            return '<div class="terminal-container transparent">' +
+            return '<div class="terminal-container">' +
                 (this.options.draggable ? '<div class="terminal-header"></div>' : '') +
                 '<div class="terminal terminal-scrollable sharp-top-border">\
                     <div class="terminal-output"></div>\
