@@ -81,12 +81,12 @@
 
         _terminalHtml: function () {
             return '<div class="terminal-container transparent">' +
-            this.options.draggable ? '<div class="terminal-header"></div>' : '' +
-            '<div class="terminal terminal-scrollable sharp-top-border">\
-                <div class="terminal-output"></div>\
-                <div class="terminal-helper" contenteditable="true"></div>\
-            </div>\
-        </div>'
+                (this.options.draggable ? '<div class="terminal-header"></div>' : '') +
+                '<div class="terminal terminal-scrollable sharp-top-border">\
+                    <div class="terminal-output"></div>\
+                    <div class="terminal-helper" contenteditable="true"></div>\
+                </div>\
+            </div>'
         },
         // ./HTMLS
 
@@ -212,7 +212,7 @@
             selectors.$inputLine = $terminalHtml.find(".terminal-input-wrap");
 
             if (this.options.draggable) {
-                $(".terminal-container").draggable({
+                $terminalHtml.draggable({
                     handle: ".terminal-header",
                     containment: this.options.draggableContainer
                 });

@@ -1,6 +1,6 @@
-{
+  {
   "name": "ui-terminal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "jquery ui terminal widget",
   "main": "./src/ui.terminal.js",
   "scripts": {
@@ -11,6 +11,10 @@
     "url": "git+https://github.com/broAir/ui-terminal.git"
   },
   "keywords": [
+    "jquery-ui",
+    "jquery terminal",
+    "jquery console",
+    "jquery-ui terminal",
     "terminal",
     "widget",
     "console-style",

@@ -1,5 +1,6 @@
 {
   "name": "ui-terminal",
+  "version": "1.0.1",
   "description": "jquery ui terminal widget",
   "main":  "./src/ui.terminal.js",
   "authors": [
@@ -7,6 +8,10 @@
   ],
   "license": "ISC",
   "keywords": [
+    "jquery-ui",
+    "jquery terminal",
+    "jquery console",
+    "jquery-ui terminal",
     "terminal",
     "widget",
     "console-style",
