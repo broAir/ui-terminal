@@ -67,7 +67,9 @@
                 this.name = name;
                 this.info = desc;
                 this.trigger = trigger;
-                this.properties = props;
+                for (var prop in props) {
+                    this[prop] = props[prop];
+                }
             }
         },
 
@@ -381,6 +383,7 @@
             var opts = args.properties || "";
 
             var command = new this._types.Command(name, trigger, desc, opts);
+            this._commands.push(command);
         }
     });
 
